@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
@@ -14,7 +15,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Avatar from '@mui/material/Avatar';
 import MenuItems from '../../components/MenuItems';
-
 
 const drawerWidth = 240;
 
@@ -63,6 +63,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const DashboardLayout = () => {
+  const title = useSelector(state => state.app.title);
   const [open, setOpen] = useState(true);
   const toggleDrawer = () => setOpen(!open);
   return (
@@ -92,7 +93,7 @@ const DashboardLayout = () => {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {title}
             </Typography>
             <IconButton
               size="small"
