@@ -9,13 +9,13 @@ const Notes = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setTitle('Notas'));
+    dispatch(setTitle('Descuento'));
   })
 
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Paper sx={{p: 2}}>
+    <Grid container spacing={6}>
+      <Grid item xs={15}>
+        <Paper sx={{p: 5}}>
           <TablenNotes/>
         </Paper>
       </Grid>

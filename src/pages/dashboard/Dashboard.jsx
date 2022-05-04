@@ -1,48 +1,32 @@
 import React, {useEffect} from "react";
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import { pulse, flipInX } from 'react-animations';
-import { keyframes } from '@mui/material/styles';
-import Cover1Img from '../../assets/images/covers/cover_1.jpg'
-import Cover2Img from '../../assets/images/covers/cover_2.jpg'
+import MediaCard from "./Card";
+import { allTourism, setTitle } from "../../redux/appRedux";
 
-import {setTitle} from '../../redux/appRedux';
 
-const PulseAnimation = keyframes`${pulse}`;
-const FlipInXAnimation = keyframes`${flipInX}`;
+
 const Dashboard = () => {
   const dispatch = useDispatch();
+  const hoteles = useSelector(state => state.tourismReducer.tourism)
+  
 
   useEffect(() => {
-    dispatch(setTitle('Panel'));
-  })
+    dispatch(setTitle('Alojamiento Turismo'));
+    dispatch(allTourism())
+  },[dispatch]) 
+
+  console.log(hoteles)
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <Paper sx={{p: 2}}>
-          <Box
-            component="img"
-            sx={{
-              height: 233,
-              width: 350,
-              animation: `infinite 5s ${PulseAnimation}` 
-            }}
-            alt=""
-            src={Cover1Img}
-          />
-          <Box
-            component="img"
-            sx={{
-              height: 233,
-              width: 350,
-              animation: `infinite 5s ${FlipInXAnimation}` 
-            }}
-            alt=""
-            src={Cover2Img}
-          />
+      <Grid item xs={8}>
+        <Paper sx={{p: 5}}>
+         { hoteles.map((hotel)=>{
+           return <MediaCard hotel={hotel} />
+         }) }
         </Paper>
       </Grid>
     </Grid>

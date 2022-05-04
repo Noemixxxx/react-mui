@@ -11,24 +11,30 @@ const MenuItems = () => {
   const navigate = useNavigate();
   return (
     <React.Fragment>
-      <ListItemButton onClick={() => navigate("/")}>
-        <ListItemIcon>
+       <ListItemButton onClick={() => navigate("/")}>
+         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
-        <ListItemText primary="Dashboard" />
+        <ListItemText primary="Alojamientos" />
       </ListItemButton>
-      <ListItemButton onClick={() => navigate("/reports")}>
-        <ListItemIcon>
-          <BarChartIcon />
-        </ListItemIcon>
-        <ListItemText primary="Reportes" />
-      </ListItemButton>
+
       <ListItemButton onClick={() => navigate("/notes")}>
         <ListItemIcon>
           <LayersIcon />
         </ListItemIcon>
-        <ListItemText primary="Notas" />
+        <ListItemText primary="Descuento" />
       </ListItemButton>
+
+      {/* <ListItemButton  onClick={() => navigate("/reports")}>
+        <ListItemIcon>
+          <BarChartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Reportes" />
+      </ListItemButton> */}
+
+      
+
+      
     </React.Fragment>
   );
 };

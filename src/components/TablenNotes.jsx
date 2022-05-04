@@ -6,54 +6,52 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, DiasdeDescuentos , Hotel, paymentMethod, amount) {
+  return { id, DiasdeDescuentos, Hotel,  paymentMethod, amount };
 }
 
 const rows = [
   createData(
     0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
+    '20/07/2022',
+    'Hotel Cuesta de Miranda',
     'VISA ⠀•••• 3719',
-    312.44,
+    20000.44,
   ),
   createData(
     1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
+    '23/09/2023',
+    'Cabaña La Martina',
     'VISA ⠀•••• 2574',
-    866.99,
+    15000.99,
   ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+  createData(2, '15/02/2022', 'Posada del Olivo',  'MC ⠀•••• 1253', 10000.81),
   createData(
     3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
+    '24/12/ 2022',
+    'GM Rooms Rental SuitesSe abre en una ventana nueva ',
     'AMEX ⠀•••• 2000',
-    654.39,
+    24999.39,
   ),
   createData(
     4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
+    '31/01/2023',
+    'Hotel Boutique Pircas NegrasSe abre en una ventana nueva',
     'VISA ⠀•••• 5919',
-    212.79,
+    20500.79,
   ),
 ];
 
-const TablenNotes = () => {
+const TablenNotes = ({hotel}) => {
+
+  // const {_id,  name} = hotel
+
   return (
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
+            <TableCell>Dias de Descuentos</TableCell>
+            <TableCell>Hotel</TableCell>
             <TableCell>Payment Method</TableCell>
             <TableCell align="right">Sale Amount</TableCell>
           </TableRow>
@@ -61,9 +59,8 @@ const TablenNotes = () => {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
+              <TableCell>{row. DiasdeDescuentos}</TableCell>
+              {/* <TableCell>{name}</TableCell> */}
               <TableCell>{row.paymentMethod}</TableCell>
               <TableCell align="right">{`$${row.amount}`}</TableCell>
             </TableRow>
