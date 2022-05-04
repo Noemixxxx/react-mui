@@ -7,7 +7,7 @@ import TableRow from '@mui/material/TableRow';
 
 // Generate Order Data
 function createData(id, DiasdeDescuentos , Hotel, paymentMethod, amount) {
-  return { id, DiasdeDescuentos, Hotel,  paymentMethod, amount };
+  return { id, DiasdeDescuentos, Hotel,  paymentMethod, amount};
 }
 
 const rows = [
@@ -25,33 +25,31 @@ const rows = [
     'VISA ⠀•••• 2574',
     15000.99,
   ),
-  createData(2, '15/02/2022', 'Posada del Olivo',  'MC ⠀•••• 1253', 10000.81),
+  createData(2,  '15/02/2022', 'Posada del Olivo',  'MC ⠀•••• 1253', 10000.81),
   createData(
     3,
     '24/12/ 2022',
-    'GM Rooms Rental SuitesSe abre en una ventana nueva ',
+    'GM Rooms Rental SuitesSe  ',
     'AMEX ⠀•••• 2000',
     24999.39,
   ),
   createData(
     4,
     '31/01/2023',
-    'Hotel Boutique Pircas NegrasSe abre en una ventana nueva',
+    'Hotel Boutique Pircas NegrasSe',
     'VISA ⠀•••• 5919',
     20500.79,
   ),
 ];
 
-const TablenNotes = ({hotel}) => {
-
-  // const {_id,  name} = hotel
-
+const TablenNotes = () => {
   return (
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Dias de Descuentos</TableCell>
             <TableCell>Hotel</TableCell>
+            {/* <TableCell>Ship To</TableCell> */}
             <TableCell>Payment Method</TableCell>
             <TableCell align="right">Sale Amount</TableCell>
           </TableRow>
@@ -59,8 +57,9 @@ const TablenNotes = ({hotel}) => {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row. DiasdeDescuentos}</TableCell>
-              {/* <TableCell>{name}</TableCell> */}
+              <TableCell>{row.DiasdeDescuentos}</TableCell>
+              <TableCell>{row.Hotel}</TableCell>
+              {/* <TableCell>{row.shipTo}</TableCell> */}
               <TableCell>{row.paymentMethod}</TableCell>
               <TableCell align="right">{`$${row.amount}`}</TableCell>
             </TableRow>
