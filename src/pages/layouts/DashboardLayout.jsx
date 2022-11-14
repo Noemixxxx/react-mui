@@ -15,6 +15,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Avatar from '@mui/material/Avatar';
 import MenuItems from '../../components/MenuItems';
+import CustomizedInputBase from '../../components/buscador';
+import ColorButtons from '../../components/Usuario';
+
+
 
 const drawerWidth = 240;
 
@@ -95,11 +99,17 @@ const DashboardLayout = () => {
             >
               {title}
             </Typography>
+            <CustomizedInputBase></CustomizedInputBase>
+            <ColorButtons></ColorButtons>
+            
+            
             <IconButton
               size="small"
               sx={{ ml: 2 }}
             >
-              <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+              {/* <Avatar sx={{ width: 32, height: 32 }}>ARS</Avatar> */}
+              
+              
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -138,6 +148,7 @@ const DashboardLayout = () => {
             <Outlet/>
           </Container>
         </Box>
+        
       </Box>
   )
 }

@@ -1,8 +1,9 @@
 
-const url = process.env.REACT_APP_URL;
+const url = process.env.REACT_APP_URL; 
+ 
 
-const routes = {
-  getAllTourism: () => url,
+const routes = { 
+  getAllTourism: () => url, 
   getTourismById: (idtourism) => `${url}/${idtourism}`,
   createTourism: () => url,
   updateTourism: (idTourism) => `${url}/${idTourism}`,
@@ -10,3 +11,4 @@ const routes = {
 };
 
 export default routes;
+

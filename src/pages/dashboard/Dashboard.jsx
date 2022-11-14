@@ -8,13 +8,14 @@ import { allTourism, setTitle } from "../../redux/appRedux";
 
 
 
+
 const Dashboard = () => {
   const dispatch = useDispatch();
   const hoteles = useSelector(state => state.tourismReducer.tourism)
   
 
   useEffect(() => {
-    dispatch(setTitle('Alojamiento Turismo'));
+    dispatch(setTitle('Hospedaje La Rioja'));
     dispatch(allTourism())
   },[dispatch]) 
 
@@ -29,6 +30,7 @@ const Dashboard = () => {
          }) }
         </Paper>
       </Grid>
+ 
     </Grid>
   );
 };

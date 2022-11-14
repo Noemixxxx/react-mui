@@ -1,41 +1,41 @@
-const execute= async(url, config= {})=>{
-    try{
-        const res = await fetch(url,config)
-        return res.json()
-    }catch (err){
+const execute= async(url, config= {})=>{ 
+
+    try{  
+        const res = await fetch(url,config) 
+        return res.json() 
+    }catch (err){ 
         throw new Error (err)
-    }
+    } 
 }
 
 const get = async (url) =>{
 
-   return execute (url);
+   return execute (url); 
    
 }
 
-const post = async (url, body)=>{
-   
+const post = async (url, body)=>{ 
+  
     return execute(url, {
-             method: "POST",
-            body: body
-
+             method: "POST", 
+            body: body 
     })         
       
    
 }
 
-const put = async (url, body)=> {
+const put = async (url, body)=> { 
 
    return execute(url, {
-    method: "PUT",
-    body:body
+    method: "PUT", 
+    body:body 
 })
 }
 
 
-const delet = async (url)=> {
-   return execute (url,{
-       method: "DELETE"
+const delet = async (url)=> { 
+   return execute (url,{  
+       method: "DELETE" 
    });
 }
 
@@ -43,7 +43,7 @@ const delet = async (url)=> {
 
 
 const api= {
-    get: (url)=> get(url),
+    get: (url)=> get(url), 
     post: (url,body)=> post (url,body),
     put: (url, body) => put ( url, body),
     delete: (url) => delet(url) 
